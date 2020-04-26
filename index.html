@@ -13,8 +13,7 @@
 	<meta itemprop="description" content="diagrams.net is a free online diagramming application  and flowchart maker . You can use it to create UML, entity relationship,
 		org charts, BPMN and BPM, database schema and networks. Also possible are telecommunication network, workflow, flowcharts, maps overlays and GIS, electronic 
 		circuit and social network diagrams.">
-	<meta itemprop="image"
-		content="images/drawlogo256.png">
+	<meta itemprop="image" content="images/drawlogo256.png">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
 	<meta name="msapplication-config" content="images/browserconfig.xml">
 	<meta name="mobile-web-app-capable" content="yes">
@@ -394,14 +393,19 @@
 				document.addEventListener("DOMContentLoaded", fn);
 			}
 		}
-		
+
 		// hack to remove logo click handler
 		docReady(function () {
 			setTimeout(function () {
-				var old_element = document.querySelector("body > div.geMenubarContainer > a");
-				var new_element = old_element.cloneNode(true);
-				old_element.parentNode.replaceChild(new_element, old_element);
-				console.log('App ready.')
+				var logo_old = document.querySelector("body > div.geMenubarContainer > div.geMenubar > img")
+				if (!logo_old) {
+					logo_old = document.querySelector("body > div.geMenubarContainer > a");
+				}
+				if (logo_old) {
+					var logo_new = logo_old.cloneNode(true);
+					logo_old.parentNode.replaceChild(logo_new, logo_old);
+					console.log('App ready.')
+				}
 			}, 5000)
 		})
 	</script>
