@@ -1,5 +1,4 @@
-FROM joshuarli/alpine-python3-pip:latest
-ENV PYTHONUNBUFFERED 1
+FROM frolvlad/alpine-python3:latest
 
 RUN mkdir /app
 WORKDIR /app
