@@ -1,30 +1,33 @@
-[![Build Status](https://travis-ci.com/jgraph/drawio.svg?branch=master)](https://travis-ci.com/jgraph/drawio)
+# drawio-local
 
-About
------
-[diagrams.net](https://app.diagrams.net), [previously draw.io](https://www.diagrams.net/blog/move-diagrams-net), is an online diagramming web site that delivers the source in this project.
+Local features only of [Drawio](https://github.com/jgraph/drawio).
 
-diagrams.net uses the [mxGraph library](https://github.com/jgraph/mxgraph) as the base of the stack, with the [GraphEditor example](https://github.com/jgraph/mxgraph/tree/master/javascript/examples/grapheditor) from mxGraph as the base of the application part. The mxGraph library build used is stored under /etc/mxgraph/mxClient.js.
+Demo: <https://tobyqin.github.io/drawio-local>
 
-License
--------
+## Why this project
+
+You may want to deploy [Drawio](https://github.com/jgraph/drawio) in your company without any external features, download the repo and host to nginx or using python simple server:
+
+```bash
+cd drawio-local
+python2 -m SimpleHTTPServer 8000
+```
+
+## How does it work?
+
+You can do it by yourself, steps like this:
+
+1. Download latest version of [drawio](https://github.com/jgraph/drawio)
+2. Just keep the `src/main/webapp` folder
+3. Modify [PreConfig](https://github.com/jgraph/drawio/blob/master/src/main/webapp/js/PreConfig.js) with [supported parameters](https://desk.draw.io/support/solutions/articles/16000042546-what-url-parameters-are-supported-).
+4. To total disable `external connections`, please set `offline='1'` and `local='1'`
+
+However, when set`offline='1'` will disable template feature and still show "Download Drawio Desktop" notification. So I modified `js/app.min.js` a little to disable the notification, check my commit history to learn the hack.
+
+## License
+
 diagrams.net is licensed under the Apache v2.
 
-Development
------------
+## Supported Browsers
 
-A development guide is being started on the GitHub project wiki. There is a [draw.io](http://stackoverflow.com/questions/tagged/draw.io) tag on Stack Overflow currently, please make sure any questions adhere to their guidelines for questions.
-
-The [mxGraph documentation](https://jgraph.github.io/mxgraph/) provides a lot of the docs for the bottom part of the stack. There is an [mxgraph tag on SO](http://stackoverflow.com/questions/tagged/mxgraph).
-
-Running
--------
-One way to run diagrams.net is to fork this project, [publish the master branch to GitHub pages](https://help.github.com/categories/github-pages-basics/) and the [pages sites](https://jgraph.github.io/drawio/src/main/webapp/index.html) will have the full editor functionality (sans the integrations).
-
-Another way is to use [the recommended Docker project](https://github.com/fjudith/docker-draw.io) or to download [draw.io Desktop](https://get.draw.io).
-
-The full packaged .war of the client and servlets is built when the project is tagged and available on the [releases page](https://github.com/jgraph/draw.io/releases).
-
-Supported Browsers
-------------------
 diagrams.net supports IE 11, Chrome 32+, Firefox 38+, Safari 9.1.x, 10.1.x and 11.0.x, Opera 20+, Native Android browser 5.1.x+, the default browser in the current and previous major iOS versions (e.g. 11.2.x and 10.3.x) and Edge 23+.
