@@ -10,7 +10,7 @@ You may want to deploy [Drawio](https://github.com/jgraph/drawio) in your compan
 
 ```bash
 cd drawio-local
-python2 -m SimpleHTTPServer 8000
+python3 -m http.server 8000
 ```
 
 To avoid unexpected errors or problems, please serve the web in root:
