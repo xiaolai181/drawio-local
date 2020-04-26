@@ -41,4 +41,4 @@ def not_support():
     return "Sorry, this action is not supported."
 
 
-app.run()
+app.run(host='0.0.0.0', port=5000)

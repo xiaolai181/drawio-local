@@ -18,6 +18,17 @@ To avoid unexpected errors or problems, please serve the web in root:
 - `http://draw.example.com:8000/` (Recommended)
 - `http://www.example.com:8080/draw` (Not Recommended)
 
+## Deploy with docker
+
+I have already built a docker image for this repo.
+
+```bash
+# local-port:docker-port
+docker run --name="drawio-local" --restart=always -p 5000:5000  tobyqin/drawio-local
+```
+
+If you want to build such image inside company, checkout the `Dockerfile`.
+
 ## How does it work
 
 You can build the local draw io by yourself, steps like this:
@@ -27,7 +38,7 @@ You can build the local draw io by yourself, steps like this:
 3. Modify [PreConfig](https://github.com/jgraph/drawio/blob/master/src/main/webapp/js/PreConfig.js) with [supported parameters](https://desk.draw.io/support/solutions/articles/16000042546-what-url-parameters-are-supported-).
 4. To total disable `external connections`, please set `offline='1'` and `local='1'`
 
-However, when set`offline='1'` will disable template feature and still show "Download Drawio Desktop" notification. So I modified `js/app.min.js` a little to disable the notification, check my commit history to learn the hack.
+However, when set`offline='1'` will disable template feature and still show "Download Drawio Desktop" notification. So I modified `js/app.min.js` a little to disable the notification, check my commit history to learn the some other hacks.
 
 ## License
 
