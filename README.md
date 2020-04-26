@@ -2,7 +2,7 @@
 
 Local features only of [Drawio](https://github.com/jgraph/drawio).
 
-Demo: <https://tobyqin.github.io/drawio-local>
+Demo: <https://test2go.github.io/drawio-local/>
 
 ## Why this project
 
@@ -13,9 +13,14 @@ cd drawio-local
 python2 -m SimpleHTTPServer 8000
 ```
 
-## How does it work?
+To avoid unexpected errors or problems, please serve the web in root:
 
-You can do it by yourself, steps like this:
+- `http://draw.example.com:8000/` (Recommended)
+- `http://www.example.com:8080/draw` (Not Recommended)
+
+## How does it work
+
+You can build the local draw io by yourself, steps like this:
 
 1. Download latest version of [drawio](https://github.com/jgraph/drawio)
 2. Just keep the `src/main/webapp` folder
