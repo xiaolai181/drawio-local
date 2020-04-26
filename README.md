@@ -6,11 +6,11 @@ Demo: <https://test2go.github.io/drawio-local/>
 
 Disable features:
 
-[x] All online storages, e.g. google drive, Drawio Drive, OneDrive etc.
-[x] Remove logo click to draw io official website
-[x] Disable draw io desktop client download notification.
-[ ] Help and support info to draw io.
-[ ] Sharing links and export links to draw io.
+- [x] All online storages, e.g. google drive, Drawio Drive, OneDrive etc.
+- [x] Remove logo click to draw io official website
+- [x] Disable draw io desktop client download notification.
+- [ ] Help and support info to draw io.
+- [ ] Sharing links and export links to draw io.
 
 ## Why this project
 
