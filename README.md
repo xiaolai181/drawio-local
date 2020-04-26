@@ -1,19 +1,27 @@
 # drawio-local
 
-Local features only of [Drawio](https://github.com/jgraph/drawio).
+Deploy [draw.io](https://github.com/jgraph/drawio) with local feature only.
 
 Demo: <https://test2go.github.io/drawio-local/>
 
+Disable features:
+
+[x] All online storages, e.g. google drive, Drawio Drive, OneDrive etc.
+[x] Remove logo click to draw io official website
+[x] Disable draw io desktop client download notification.
+[ ] Help and support info to draw io.
+[ ] Sharing links and export links to draw io.
+
 ## Why this project
 
-You may want to deploy [Drawio](https://github.com/jgraph/drawio) in your company without any external features, download the repo and host to nginx or using python simple server:
+You may want to deploy [draw.io](https://github.com/jgraph/drawio) in your company without any external features, download the repo and host to nginx or using python simple server:
 
 ```bash
 cd drawio-local
 python3 -m http.server 8000
 ```
 
-To avoid unexpected errors or problems, please serve the web in root:
+To avoid unexpected errors or problems, please serve the web as root path:
 
 - `http://draw.example.com:8000/` (Recommended)
 - `http://www.example.com:8080/draw` (Not Recommended)
